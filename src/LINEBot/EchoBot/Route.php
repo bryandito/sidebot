@@ -60,6 +60,9 @@ class Route
                 }
 
                 $replyText = $event->getText();
+                if ($replyText == 'pelecehan seksual' ) {  
+                    $bot->replyText($event->getReplyToken(),'Dimana?'); 
+                }
                 $logger->info('Reply text: ' . $replyText);
                 $resp = $bot->replyText($event->getReplyToken(), $replyText);
                 $logger->info($resp->getHTTPStatus() . ': ' . $resp->getRawBody());
