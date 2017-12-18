@@ -60,7 +60,8 @@ class Route
                 }
 
                 $replyText = $event->getText();
-                if ($replyText == 'pelecehan seksual' ) {  
+                $filterKata = ['Pelecehan seksual','pelecehan seksual','PELECEHAN SEKSUAL','Pelecehan Seksual'];
+                if(in_array($replyText,$filterKata)){  
                     $bot->replyText($event->getReplyToken(),'Dimana?'); 
                 }
                 $logger->info('Reply text: ' . $replyText);
